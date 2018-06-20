@@ -15,4 +15,4 @@ export PATH="$GOPATH/bin:$PATH"
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # prompt
-export PS1="\[$Green\]$(vcprompt -f '[%b%u%m]')\[$Color_Off\][\w]$ "
+export PS1="\[$Green\]\$(vcprompt -f '[%b%u%m]')\[$Color_Off\][\w]$ "
