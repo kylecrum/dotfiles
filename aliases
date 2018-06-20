@@ -18,4 +18,3 @@ alias grmm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias ls='ls -GF'
 
 alias hpr='hub pull-request'
-alias
