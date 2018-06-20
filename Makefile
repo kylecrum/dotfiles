@@ -1,9 +1,10 @@
-EXCLUDE := README.md Makefile Brewfile vscode-settings.json vscode-keybindings.json config
+EXCLUDE := README.md Makefile Brewfile vscode-settings.json vscode-keybindings.json config vscode-snippets
 FILES := $(shell ls)
 SOURCES := $(filter-out $(EXCLUDE),$(FILES))
 DOTFILES := $(patsubst %, ${HOME}/.%, $(SOURCES))
 VS_CODE_SETTINGS := ${HOME}/Library/Application\ Support/Code/User/settings.json
 VS_CODE_KEYBINDINGS := ${HOME}/Library/Application\ Support/Code/User/keybindings.json
+VS_CODE_SNIPPETS := ${HOME}/Library/Application\ Support/Code/User/snippets
 NVIM_CONFIG := ${HOME}/.config/nvim/init.vim
 NVIM_PLUG := ${HOME}/.local/share/nvim/site/autoload/plug.vim
 VIM_PLUG := ${HOME}/.vim/autoload/plug.vim
@@ -11,7 +12,7 @@ VIM_PLUG := ${HOME}/.vim/autoload/plug.vim
 .PHONY: update vim-install nvm-install brew-install brew-bundle uninstall
 
 install: all
-all: $(DOTFILES) $(NVIM_CONFIG) $(VS_CODE_SETTIGNS) $(VS_CODE_KEYBINDINGS) vim-install
+all: $(DOTFILES) $(NVIM_CONFIG) $(VS_CODE_SETTIGNS) $(VS_CODE_KEYBINDINGS) $(VS_CODE_SNIPPETS) vim-install
 setup: brew-install brew-bundle nvm-install all
 git-user: ${HOME}/.gituser
 all: $(DOTFILES) $(VS_CODE_SETTIGNS) $(VS_CODE_KEYBINDINGS) vim-install git-user
@@ -30,6 +31,9 @@ $(VS_CODE_SETTINGS):
 
 $(VS_CODE_KEYBINDINGS):
 	ln -s $(PWD)/vscode-keybindings.json "$@"
+
+$(VS_CODE_SNIPPETS):
+	ln -s $(PWD)/vscode-snippets "$@"
 
 $(NVIM_PLUG) $(VIM_PLUG):
 	@curl -fLo $@ --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
