@@ -1,0 +1,62 @@
+EXCLUDE := README.md Makefile Brewfile vscode-settings.json vscode-keybindings.json config
+FILES := $(shell ls)
+SOURCES := $(filter-out $(EXCLUDE),$(FILES))
+DOTFILES := $(patsubst %, ${HOME}/.%, $(SOURCES))
+VS_CODE_SETTINGS := ${HOME}/Library/Application\ Support/Code/User/settings.json
+VS_CODE_KEYBINDINGS := ${HOME}/Library/Application\ Support/Code/User/keybindings.json
+NVIM_CONFIG := ${HOME}/.config/nvim/init.vim
+NVIM_PLUG := ${HOME}/.local/share/nvim/site/autoload/plug.vim
+VIM_PLUG := ${HOME}/.vim/autoload/plug.vim
+
+.PHONY: update vim-install nvm-install brew-install brew-bundle uninstall
+
+install: all
+all: $(DOTFILES) $(NVIM_CONFIG) $(VS_CODE_SETTIGNS) $(VS_CODE_KEYBINDINGS) vim-install
+setup: brew-install brew-bundle nvm-install all
+git-user: ${HOME}/.gituser
+all: $(DOTFILES) $(VS_CODE_SETTIGNS) $(VS_CODE_KEYBINDINGS) vim-install git-user
+
+nvim-config: $(NVIM_CONFIG)
+
+$(NVIM_CONFIG):
+	mkdir -p ${HOME}/.config/nvim
+	ln -s $(PWD)/config/nvim/init.vim $@
+
+$(DOTFILES): $(addprefix ${HOME}/., %) : ${PWD}/%
+	ln -s $< $@
+
+$(VS_CODE_SETTINGS):
+	ln -s $(PWD)/vscode-settings.json "$@"
+
+$(VS_CODE_KEYBINDINGS):
+	ln -s $(PWD)/vscode-keybindings.json "$@"
+
+$(NVIM_PLUG) $(VIM_PLUG):
+	@curl -fLo $@ --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+${HOME}/.gituser:
+	@read -p "Enter Your Full Name for Git Commits: " name; \
+		read -p "Enter Your Email for Git Commits: " email; \
+		git config -f ~/.gituser user.name "$$name"; \
+		git config -f ~/.gituser user.email "$$email"
+
+nvm-install:
+	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+brew-install:
+	ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew-bundle:
+	brew bundle
+
+uninstall:
+	@echo $(DOTFILES) | xargs -n 1 sh -c 'unlink $$0 || true'
+
+vim-install: $(NVIM_PLUG) $(VIM_PLUG)
+	@echo "Installing vim plugins"
+	@pip3 install --upgrade neovim
+	@nvim +PlugInstall +qa
+	@vim +PlugInstall +qa
+
+update: all
+	@git pull

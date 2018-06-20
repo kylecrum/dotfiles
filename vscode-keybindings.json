@@ -1,0 +1,48 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+      "key": "ctrl+\\",
+      "command": "workbench.view.explorer",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "shift+cmd+n",
+      "command": "workbench.view.explorer",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "shift+cmd+n",
+      "command": "workbench.view.explorer",
+      "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+      "key": "ctrl+h",
+      "command": "workbench.action.focusPreviousGroup",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+l",
+      "command": "workbench.action.focusNextGroup",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+l",
+      "command": "workbench.action.focusFirstEditorGroup",
+      "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+      "key": "o",
+      "command": "list.select",
+      "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+      "key": "n",
+      "command": "explorer.newFile",
+      "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+      "key": "ctrl+k",
+      "command": "macros.searchWordUnderCursor",
+      "when": "editorTextFocus"
+    },
+  ]

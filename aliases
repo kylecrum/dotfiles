@@ -1,0 +1,21 @@
+# Git Aliases
+alias gs='git status'
+alias gstsh='git stash'
+alias gsh='git show'
+alias gcm='git ci'
+alias gco='git co'
+alias ga='git add -A'
+alias guns='git unstage'
+alias gunc='git uncommit'
+alias gam='git amend --reset-author'
+alias gb='git b'
+alias gdc='git diff --cached -w'
+alias gpl='git pull'
+alias gplr='git pull --rebase'
+alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
+alias gnb='git nb' # new branch aka checkout -b
+alias grmm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias ls='ls -GF'
+
+alias hpr='hub pull-request'
+alias

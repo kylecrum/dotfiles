@@ -1,0 +1,205 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "vim.leader": ",",
+    "window.zoomLevel": 1,
+    "vim.useSystemClipboard": true,
+    "files.autoSave": "onFocusChange",
+    "vim.useCtrlKeys":true,
+    "workbench.editor.enablePreview":false,
+    "workbench.editor.showTabs": false,
+    "gitlens.codeLens.enabled": false,
+    "editor.autoIndent": true,
+    "editor.minimap.enabled": false,
+    "npm.enableScriptExplorer": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {"language": "typescript", "autoFix": true },
+        {"language": "typescriptreact", "autoFix": true }
+    ],
+    "tslint.autoFixOnSave": true,
+    "ruby.lint": {
+        "reek": false,
+        "rubocop": false,
+        "ruby": false, //Runs ruby -wc
+        "fasterer": false,
+        "debride": false,
+        "ruby-lint": false
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "t"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.quickOpen"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "b"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.openPreviousEditorFromHistory"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "b"
+            ],
+            "commands": [
+                {
+                    "command": "gitlens.toggleFileBlame"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "d"
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.goToDeclaration"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "g"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.view.search"
+                }
+            ]
+        },
+        {
+            "before": [
+                "v",
+                "v"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.splitEditor"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "f"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.files.copyPathOfActiveFile"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "j",
+                "m"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.quickOpen",
+                    "args": "app/models/"
+                }
+            ]
+        },
+
+        {
+            "before": [
+                "<leader>",
+                "j",
+                "c"
+            ],
+            "commands": [
+                {
+                    "command": "workbench.action.quickOpen",
+                    "args": "app/controllers/"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "k",
+            ],
+            "commands": [
+                {
+                    "command": "macros.searchWordUnderCursor"
+                }
+            ]
+        },
+    ],
+    "vim.visualstar": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
+    "workbench.activityBar.visible": true,
+    "macros": {
+        "searchWordUnderCursor": [
+            "editor.action.addSelectionToNextFindMatch",
+            "workbench.view.search"
+        ]
+    },
+    "[haml]": {
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+       "editor.tabSize" : 2
+    },
+    "files.associations": {
+        "*.haml": "haml"
+    },
+    "sync.gist": "4850d27cd3a8cbda0ccee72615ae791c",
+    "sync.lastUpload": "2018-06-12T16:58:30.586Z",
+    "sync.autoDownload": false,
+    "sync.autoUpload": true,
+    "sync.lastDownload": "2018-01-30T17:22:16.106Z",
+    "sync.forceDownload": false,
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false,
+    "extensions.ignoreRecommendations": false,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": false
+    },
+    "workbench.colorTheme": "Solarized Dark",
+    "gitlens.keymap": "alternate",
+    "gitlens.explorers.avatars": false,
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+    "gitlens.historyExplorer.enabled": true,
+    "sync.removeExtensions": true,
+    "sync.syncExtensions": true
+}
