@@ -1,5 +1,5 @@
-source ~/.exports;
 source ~/.colors;
+source ~/.exports;
 source ~/.aliases;
 
 eval "$(rbenv init -)"
