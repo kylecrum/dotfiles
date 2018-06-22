@@ -15,10 +15,9 @@
     "eslint.validate": [
         "javascript",
         "javascriptreact",
-        {"language": "typescript", "autoFix": true },
-        {"language": "typescriptreact", "autoFix": true }
     ],
     "tslint.autoFixOnSave": true,
+    "tslint.enable": true,
     "ruby.lint": {
         "reek": false,
         "rubocop": false,
@@ -88,6 +87,7 @@
         },
         {
             "before": [
+                "<leader>",
                 "v",
                 "v"
             ],
@@ -171,7 +171,7 @@
         "*.haml": "haml"
     },
     "sync.gist": "4850d27cd3a8cbda0ccee72615ae791c",
-    "sync.lastUpload": "2018-06-12T16:58:30.586Z",
+    "sync.lastUpload": "2018-06-22T01:46:27.114Z",
     "sync.autoDownload": false,
     "sync.autoUpload": true,
     "sync.lastDownload": "2018-01-30T17:22:16.106Z",
