@@ -2,6 +2,14 @@ source ~/.colors;
 source ~/.exports;
 source ~/.aliases;
 
+# https://github.com/git/git/blob/master/contrib/completion/git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+
+  # Add git completion to aliases
+  __git_complete gco _git_checkout
+fi
+
 eval "$(rbenv init -)"
 bind 'set completion-ignore-case on'
 
