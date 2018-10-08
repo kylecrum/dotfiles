@@ -20,6 +20,7 @@ if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
   . `brew --prefix`/etc/bash_completion.d/git-prompt.sh
 fi
 
+[[ -f ~/.nodenv/completions/nodenv.bash ]] && source ~/.nodenv/completions/nodenv.bash
 
 # Include your own customizations!
 [[ -f ~/.bash.local ]] && source ~/.bash.local
