@@ -16,3 +16,6 @@ PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # prompt
 export PS1="[\w]\[$Green\]\$(vcprompt -f '[%b%u%m]')\[$Color_Off\] 👉  "
+
+# bundler editor
+export BUNDLER_EDITOR="code"
