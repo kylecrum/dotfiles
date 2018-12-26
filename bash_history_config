@@ -1,0 +1,20 @@
+# Bash command history
+# Setups a lager history (allow 32³ entries; default is 500)
+#
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
+
+# Don't allow duplicate lines in history.
+export HISTCONTROL=ignoredups
+
+# Make some common commands not show up in history.
+export HISTIGNORE="bg:fg:history:ls:cd:cd -:pwd:exit:date:* --help"
+
+# Make the time format a little better
+export HISTTIMEFORMAT='%F %T '
+
+# Save history as soon as you issue it
+export PROMPT_COMMAND='history -a'
+
+shopt -s histappend         # append to (not overwrite) the history file
+shopt -s cmdhist            # save multi-line commands in history as single line
