@@ -201,5 +201,9 @@
     },
     "gitlens.historyExplorer.enabled": true,
     "sync.removeExtensions": true,
-    "sync.syncExtensions": true
+    "sync.syncExtensions": true,
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+    "gitlens.views.avatars": false,
+    "diffEditor.renderSideBySide": false
 }
