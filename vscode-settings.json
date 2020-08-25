@@ -205,5 +205,11 @@
     "gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
     "gitlens.views.avatars": false,
-    "diffEditor.renderSideBySide": false
+    "diffEditor.renderSideBySide": false,
+    "[proto3]": {
+        "editor.tabSize": 2
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    }
 }
