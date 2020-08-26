@@ -1,3 +1,4 @@
+.DEFAULT_GOAL := setup
 EXCLUDE := README.md Makefile Brewfile vscode-settings.json vscode-keybindings.json config vscode-snippets
 FILES := $(shell ls)
 SOURCES := $(filter-out $(EXCLUDE),$(FILES))
@@ -9,10 +10,10 @@ NVIM_CONFIG := ${HOME}/.config/nvim/init.vim
 NVIM_PLUG := ${HOME}/.local/share/nvim/site/autoload/plug.vim
 VIM_PLUG := ${HOME}/.vim/autoload/plug.vim
 
-.PHONY: update vim-install nvm-install brew-install brew-bundle uninstall
+.PHONY: update vim-install nvm-install brew-install brew-bundle uninstall vscode-extensions
 
 install: all
-all: $(DOTFILES) $(NVIM_CONFIG) $(VS_CODE_SETTIGNS) $(VS_CODE_KEYBINDINGS) $(VS_CODE_SNIPPETS) vim-install
+all: $(DOTFILES) $(NVIM_CONFIG) $(VS_CODE_SETTIGNS) $(VS_CODE_KEYBINDINGS) $(VS_CODE_SNIPPETS) vscode-extensions vim-install
 setup: brew-install brew-bundle nvm-install all
 git-user: ${HOME}/.gituser
 all: $(DOTFILES) $(VS_CODE_SETTIGNS) $(VS_CODE_KEYBINDINGS) vim-install git-user
@@ -21,19 +22,22 @@ nvim-config: $(NVIM_CONFIG)
 
 $(NVIM_CONFIG):
 	mkdir -p ${HOME}/.config/nvim
-	ln -s $(PWD)/config/nvim/init.vim $@
+	ln -sfn $(PWD)/config/nvim/init.vim $@
 
 $(DOTFILES): $(addprefix ${HOME}/., %) : ${PWD}/%
-	ln -s $< $@
+	ln -sfn $< $@
 
 $(VS_CODE_SETTINGS):
-	ln -s $(PWD)/vscode-settings.json "$@"
+	ln -sfn $(PWD)/vscode-settings.json "$@"
 
 $(VS_CODE_KEYBINDINGS):
-	ln -s $(PWD)/vscode-keybindings.json "$@"
+	ln -sfn $(PWD)/vscode-keybindings.json "$@"
 
 $(VS_CODE_SNIPPETS):
-	ln -s $(PWD)/vscode-snippets "$@"
+	ln -sfn $(PWD)/vscode-snippets "$@"
+
+vscode-extensions:
+	./vscode_extensions.sh
 
 $(NVIM_PLUG) $(VIM_PLUG):
 	@curl -fLo $@ --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -48,7 +52,7 @@ nvm-install:
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
 brew-install:
-	ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 brew-bundle:
 	brew bundle

@@ -19,3 +19,6 @@ export PS1="[\w]\[$Green\]\$(vcprompt -f '[%b%u%m]')\[$Color_Off\] 👉  "
 
 # bundler editor
 export BUNDLER_EDITOR="code"
+
+#vscode command line
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
