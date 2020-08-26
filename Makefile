@@ -13,10 +13,9 @@ VIM_PLUG := ${HOME}/.vim/autoload/plug.vim
 .PHONY: update vim-install nvm-install brew-install brew-bundle uninstall vscode-extensions
 
 install: all
-all: $(DOTFILES) $(NVIM_CONFIG) $(VS_CODE_SETTIGNS) $(VS_CODE_KEYBINDINGS) $(VS_CODE_SNIPPETS) vscode-extensions vim-install
+all: $(DOTFILES) $(NVIM_CONFIG) $(VS_CODE_SETTINGS) $(VS_CODE_KEYBINDINGS) $(VS_CODE_SNIPPETS) vscode-extensions vim-install git-user
 setup: brew-install brew-bundle nvm-install all
 git-user: ${HOME}/.gituser
-all: $(DOTFILES) $(VS_CODE_SETTIGNS) $(VS_CODE_KEYBINDINGS) vim-install git-user
 
 nvim-config: $(NVIM_CONFIG)
 
