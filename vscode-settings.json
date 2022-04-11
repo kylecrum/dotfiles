@@ -14,8 +14,6 @@
         "javascript",
         "javascriptreact",
     ],
-    "tslint.autoFixOnSave": true,
-    "tslint.enable": true,
     "ruby.lint": {
         "reek": false,
         "rubocop": false,
@@ -150,7 +148,8 @@
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "[ruby]": {
-        "editor.tabSize": 8
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
     },
     "workbench.activityBar.visible": true,
     "macros": {
@@ -168,16 +167,6 @@
     "files.associations": {
         "*.haml": "haml"
     },
-    "sync.gist": "4850d27cd3a8cbda0ccee72615ae791c",
-    "sync.lastUpload": "2018-06-27T17:53:15.351Z",
-    "sync.autoDownload": false,
-    "sync.autoUpload": true,
-    "sync.lastDownload": "2018-01-30T17:22:16.106Z",
-    "sync.forceDownload": false,
-    "sync.host": "",
-    "sync.pathPrefix": "",
-    "sync.quietSync": false,
-    "sync.askGistName": false,
     "extensions.ignoreRecommendations": false,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -193,16 +182,10 @@
     },
     "workbench.colorTheme": "Solarized Dark",
     "gitlens.keymap": "alternate",
-    "gitlens.explorers.avatars": false,
     "[typescript]": {
         "editor.tabSize": 2
     },
-    "gitlens.historyExplorer.enabled": true,
-    "sync.removeExtensions": true,
-    "sync.syncExtensions": true,
-    "gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
-    "gitlens.views.avatars": false,
     "diffEditor.renderSideBySide": false,
     "[proto3]": {
         "editor.tabSize": 2
@@ -217,5 +200,6 @@
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.wordWrap": "off",
     "redhat.telemetry.enabled": false,
-    "editor.inlineSuggest.enabled": true
+    "editor.inlineSuggest.enabled": true,
+    "bracket-pair-colorizer-2.depreciation-notice": false
 }
