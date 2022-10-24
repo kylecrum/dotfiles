@@ -8,7 +8,7 @@
     "workbench.editor.enablePreview":false,
     "workbench.editor.showTabs": false,
     "gitlens.codeLens.enabled": false,
-    "editor.autoIndent": true,
+    "editor.autoIndent": "full",
     "editor.minimap.enabled": false,
     "eslint.validate": [
         "javascript",
