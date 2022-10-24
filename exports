@@ -3,7 +3,7 @@ export CLICOLOR=1
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 
 # load
-export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
 export EDITOR="vim"
 export CDPATH=".:$HOME/dev/"
 
