@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     "vim.leader": ",",
-    "window.zoomLevel": 3,
+    "window.zoomLevel": 2,
     "vim.useSystemClipboard": true,
     "files.autoSave": "onFocusChange",
     "vim.useCtrlKeys":true,

@@ -123,3 +123,5 @@
 	email = kyle.e.crum@gmail.com
 [rebase]
 	autoStash = true
+[init]
+	defaultBranch = main
