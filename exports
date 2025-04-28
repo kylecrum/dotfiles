@@ -3,7 +3,7 @@ export CLICOLOR=1
 export LSCOLORS="Exfxcxdxbxegedabagacad"
 
 # load
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/opt/homebrew/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/opt:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/.rbenv/bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:$HOME/.rbenv/shims:/Users/kyle/.local/bin:$PATH:node_modules/.bin"
 export EDITOR="vim"
 export CDPATH=".:$HOME/dev/"
 
@@ -25,3 +25,17 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PA
 
 # mac specific things
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Java
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+
+# charlock homes gem
+PKG_CONFIG_PATH="/opt/homebrew/opt/icu4c@74/lib/pkgconfig"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
+
+export TARGETARCH="$(uname -m)"
+

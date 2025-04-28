@@ -6,7 +6,7 @@
     "files.autoSave": "onFocusChange",
     "vim.useCtrlKeys":true,
     "workbench.editor.enablePreview":false,
-    "workbench.editor.showTabs": false,
+    "workbench.editor.showTabs": "single",
     "gitlens.codeLens.enabled": false,
     "editor.autoIndent": "full",
     "editor.minimap.enabled": false,
@@ -151,7 +151,6 @@
         "editor.tabSize": 2,
         "editor.insertSpaces": true
     },
-    "workbench.activityBar.visible": true,
     "macros": {
         "searchWordUnderCursor": [
             "editor.action.addSelectionToNextFindMatch",
@@ -191,7 +190,7 @@
         "editor.tabSize": 2
     },
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": "explicit"
     },
     "workbench.editor.decorations.badges": true,
     "editor.cursorStyle": "line",
@@ -201,5 +200,8 @@
     "editor.wordWrap": "off",
     "redhat.telemetry.enabled": false,
     "editor.inlineSuggest.enabled": true,
-    "bracket-pair-colorizer-2.depreciation-notice": false
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "git.ignoreMissingGitWarning": true,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "makefile.configureOnOpen": true
 }

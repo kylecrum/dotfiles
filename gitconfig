@@ -121,7 +121,10 @@
 [user]
 	name = Kyle Crum
 	email = kyle.e.crum@gmail.com
+	signingkey = /Users/kyle/.ssh/id_rsa.pub
 [rebase]
 	autoStash = true
 [init]
 	defaultBranch = main
+[gpg]
+	format = ssh

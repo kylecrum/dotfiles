@@ -18,5 +18,6 @@ alias gnb='git nb' # new branch aka checkout -b
 alias grmm='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias ls='ls -GF'
 alias gl='git log'
-
+alias tilt="$(brew --prefix)/bin/tilt"
 alias hpr='hub pull-request'
+alias spec='BUNDLE_GEMFILE=Gemfile.next bin/rspec'
